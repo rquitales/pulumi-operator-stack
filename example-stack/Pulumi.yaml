@@ -1,0 +1,3 @@
+name: pulumi-operator-stack
+runtime: nodejs
+description: A minimal Kubernetes TypeScript Pulumi program

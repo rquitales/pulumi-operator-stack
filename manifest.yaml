@@ -1,0 +1,18 @@
+apiVersion: pulumi.com/v1
+kind: Stack
+metadata:
+  name: stack-deployment
+  namespace: default
+spec:
+  envRefs:
+    PULUMI_ACCESS_TOKEN:
+      type: Secret
+      secret:
+        name: pulumi-token
+        key: PULUMI_ACCESS_TOKEN
+  stack: ramon-pulumi-corp/pulumi-operator-stack/dev
+  projectRepo: https://github.com/rquitales/pulumi-operator-stack
+  branch: main
+  repoDir: ./example-stack
+  continueResyncOnCommitMatch: true
+  resyncFrequencySeconds: 60
